@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  cleanup:
+    restart: always
+    image: servivum/docker-host-cleanup:20.10
+    environment:
+      CRON_INTERVAL: '0 3 * * *'
+      PRUNE_BUILD_CACHES: 'true'
+      PRUNE_BUILD_CACHES_FILTER: 'until=5m'
+      PRUNE_CONTAINERS: 'true'
+      PRUNE_CONTAINERS_FILTER: 'until=5m'
+      PRUNE_IMAGES: 'true'
+      PRUNE_IMAGES_FILTER: 'until=5m'
+      PRUNE_NETWORKS: 'true'
+      PRUNE_NETWORKS_FILTER: 'until=5m'
+      PRUNE_VOLUMES: 'true'
+    deploy:
+      mode: global
+    stop_grace_period: 1s
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+networks:
+  default:
+    internal: true

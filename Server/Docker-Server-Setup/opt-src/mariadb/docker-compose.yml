@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  database:
+    restart: "always"
+    image: "linuxserver/mariadb"
+    container_name: mariadb
+    environment:
+      - PUID=1009
+      - PGID=1009
+      - "MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}"
+      - TZ=Europe/Berlin
+    ports:
+      - "3306:3306"
+    volumes:
+      - "/01_data/persistent/mysql:/config"
+    networks:
+      - mariadb_net
+
+networks:
+  mariadb_net:
+    external: true
