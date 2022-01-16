@@ -208,7 +208,7 @@ UseSTARTTLS=YES
 ## Install log watch
 
 ```
-apt-get install -y logwatch
+apt-get install -y logwatch net-tools
 ```
 
 ```
