@@ -1,4 +1,5 @@
 # Common linux commands
+A list of common linux commands to use which I tend to forget a lot o.O
 
 # Archives
 

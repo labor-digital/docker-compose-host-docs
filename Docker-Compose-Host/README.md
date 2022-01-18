@@ -179,7 +179,7 @@ add and save:
 @reboot /opt/boot.sh
 ```
 
-## Setup email redirect
+## Setup email redirect (optional)
 
 Create a new gmail account to send the mails through
 (I recommend you create one specific for this server. That way if your server is compromised,
@@ -205,7 +205,7 @@ UseTLS=YES
 UseSTARTTLS=YES
 ```
 
-## Install log watch
+## Install log watch (optional)
 
 ```
 apt-get install -y logwatch net-tools
@@ -421,7 +421,7 @@ cd /02_docker/mariadb \
     && docker-compose up -d
 ```
 
-Install mariadb client on the host (optional)
+#### Install mariadb client on the host (optional)
 ```
 cd /00_work \
     && wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup \
@@ -432,7 +432,7 @@ cd /00_work \
     && apt-get install mariadb-client
 ```
 
-If you want to use Heidi-SQL (optional)
+#### If you want to use Heidi-SQL (optional)
 ```
 nano /etc/ssh/sshd_config
 ```
