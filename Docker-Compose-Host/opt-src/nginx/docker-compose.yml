@@ -12,6 +12,10 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       - web_net
+    logging:
+      options:
+        max-size: "128m"
+        max-files: "3"
 
 networks:
   web_net:
