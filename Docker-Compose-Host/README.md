@@ -229,7 +229,7 @@ Edit the "/01_data/iptables.conf" file and add this:
 
 before:
 ```
--A FILTERS -j REJECT --reject-with icmp-host-prohibited
+-A FILTERS -j DROP
 ```
 
 ```
