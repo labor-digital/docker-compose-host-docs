@@ -7,10 +7,8 @@ All shell commands have to be executed as "root" user.
 ```
 mkdir -p /00_work \
     && mkdir -p /01_data \
-    && mkdir -p /02_docker \
     && chmod 777 /00_work \
     && chmod 755 /01_data \
-    && chmod 755 /02_docker \
     && chmod +x /opt/boot.sh \
     && chmod +x /opt/docker-login.sh
 ```
@@ -389,6 +387,11 @@ services:
             - VIRTUAL_HOST=service.example.org,www.service.example.org
             - VIRTUAL_PORT=8000 # If NOT port 80 should be used
             - CERT_NAME=example.org # If you want to use a custom certificate
+        logging: # This option is critical! It activates docker's log-rotation and avoids storage overflow
+            options:
+                max-size: "128m"
+                max-files: "3"
+
 networks:
   web_net:
     external: true

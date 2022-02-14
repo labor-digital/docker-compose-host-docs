@@ -16,6 +16,10 @@ services:
       - "/01_data/persistent/mysql:/config"
     networks:
       - mariadb_net
+    logging:
+      options:
+        max-size: "128m"
+        max-files: "3"
 
 networks:
   mariadb_net:
