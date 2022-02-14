@@ -19,7 +19,7 @@ services:
     logging:
       options:
         max-size: "128m"
-        max-files: "3"
+        max-file: "3"
 
 networks:
   mariadb_net:

@@ -390,7 +390,7 @@ services:
         logging: # This option is critical! It activates docker's log-rotation and avoids storage overflow
             options:
                 max-size: "128m"
-                max-files: "3"
+                max-file: "3"
 
 networks:
   web_net:
