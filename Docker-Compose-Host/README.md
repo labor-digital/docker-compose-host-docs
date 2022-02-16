@@ -8,13 +8,16 @@ All shell commands have to be executed as "root" user.
 mkdir -p /00_work \
     && mkdir -p /01_data \
     && chmod 777 /00_work \
-    && chmod 755 /01_data \
-    && chmod +x /opt/boot.sh \
-    && chmod +x /opt/docker-login.sh
+    && chmod 755 /01_data
 ```
 
 ensure that all files inside the "src" directory are copied to the 
-root (/) directory of the webserver.
+root (/) directory of the webserver and execute:
+
+```
+chmod 755 /opt/boot.sh \
+    && chmod 755 /opt/docker-login.sh
+```
 
 To use the "nano" editor as default run and ensure that you 
 select the number for `/bin/nano`
