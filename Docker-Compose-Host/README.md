@@ -289,7 +289,7 @@ In the UI:
 32. Webmin -> Webmin Configuration -> Sending Email
 33. Webmin URL for use in email -> https://server.example.org:2096
 
-### Install docker and docker-compose
+## Install docker and docker-compose
 ```
 mkdir -p /01_data/persistent \
     && mkdir -p /02_docker \
@@ -316,6 +316,17 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /usr/
 ```
 echo \
     "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+** Important: For Debian use the following commands **
+```
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+
+```
+echo \
+    "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
     $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
