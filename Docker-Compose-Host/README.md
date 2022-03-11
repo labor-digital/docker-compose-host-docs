@@ -294,6 +294,7 @@ mkdir -p /01_data/persistent \
     && mkdir -p /02_docker \
     && chown -R root:docker /01_data/persistent \
     && chown -R root:docker /02_docker
+    && chmod 775 /02_docker
 ```
 
 ```
