@@ -41,7 +41,6 @@ passwd
 
 ```
 groupadd sshusers \
-    && groupadd nginx \
     && groupadd docker
 ```
 
