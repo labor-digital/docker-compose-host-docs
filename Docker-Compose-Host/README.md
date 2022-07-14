@@ -249,8 +249,10 @@ cd /root \
 Modify the port number to "2096" instead "10000"
 ```
 nano /etc/webmin/miniserv.conf \
-    && /etc/init.d/webmin restart
+    && webmin restart
 ```
+
+If `webmin restart` should fail, you can try `/etc/init.d/webmin restart` instead.
 
 Open Webmin in a browser: https://server.example.org:2096 (I suggest using cloudflare for this)
 In the UI: 
