@@ -75,7 +75,7 @@ mkdir -p /01_data/home/deployment/.ssh \
     && touch /01_data/home/deployment/.ssh/authorized_keys \
     && chmod 600 /01_data/home/deployment/.ssh/authorized_keys \
     && nano /01_data/home/deployment/.ssh/authorized_keys \
-    && chown -R admin /01_data/home/deployment/.ssh
+    && chown -R deployment /01_data/home/deployment/.ssh
 ```
 
 ## Configure and secure SSH
