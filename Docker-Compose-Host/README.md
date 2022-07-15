@@ -68,6 +68,16 @@ This is only required if you want a specific "deployment" user
 useradd deployment -m -r -g docker -G sshusers -d /01_data/home/deployment -s /bin/bash
 ```
 
+**Optional: Add ssh for deployment user**
+```
+mkdir -p /01_data/home/deployment/.ssh \
+    && chmod -R 755 /01_data/home/deployment/.ssh \
+    && touch /01_data/home/deployment/.ssh/authorized_keys \
+    && chmod 600 /01_data/home/deployment/.ssh/authorized_keys \
+    && nano /01_data/home/deployment/.ssh/authorized_keys \
+    && chown -R admin /01_data/home/deployment/.ssh
+```
+
 ## Configure and secure SSH
 
 Clean up config
